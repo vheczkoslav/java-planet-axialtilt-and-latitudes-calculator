@@ -21,15 +21,28 @@ public class DrawingEngine {
         //--------------------------------------------------------------------
         int startX1 = 80;
         int startY1 = 80;
-        double endX1   = 80 - 50 * Math.sin(angle);
-        double endY1   = 80 - 50 * Math.cos(angle);
         int startX2 = 80;
-        int startY2 = 81;
-        double endX2   = 80 - 50 * -Math.sin(angle);
-        double endY2   = 80 - 50 * -Math.cos(angle);
+        int startY2 = 80;
+        double endX1  = 80 - 50 * Math.sin(angle);
+        double endY1  = 80 - 50 * Math.cos(angle);
+        if((angle >= 0 && angle < 90) || (angle <= -270 && angle >= -360)){
+            startX2 = 80;
+            startY2 = 79;
+        }else if(angle >= 90 && angle < 180){
+            startX2 = -79;
+            startY2 = 80;
+        }else if(angle >= 180 && angle < 270){
+            startX2 = 80;
+            startY2 = 81;
+        }else if(angle >= 270 && angle <= 360){
+            startX2 = 81;
+            startY2 = 80;
+        }
+        double endX2  = 80 - 50 * -Math.sin(angle);
+        double endY2  = 80 - 50 * -Math.cos(angle);
         g.setColor(Color.red);
         g.drawLine(startX1,startY1,(int)endX1,(int)endY1);
-        g.setColor(Color.black);
+        g.setColor(Color.blue);
         g.drawLine(startX2,startY2,(int)endX2,(int)endY2);
     }
 }

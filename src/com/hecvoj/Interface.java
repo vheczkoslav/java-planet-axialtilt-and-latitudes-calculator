@@ -37,9 +37,11 @@ public class Interface {
                 try{
                     String s = input.getText();
                     Integer ballRadius = Integer.parseInt(s);
-                    //DrawingEngine.currentRadius = ballRadius;
-                    DrawingEngine.Draw_Axial_Tilt(circlePanelImg, -ballRadius, 80,80,g);
-                    System.out.println(ballRadius);
+                    if(ballRadius > 360 || ballRadius < -360){
+                        throw new NumberFormatException("Invalid value");
+                    }else{
+                        DrawingEngine.Draw_Axial_Tilt(circlePanelImg, -ballRadius, 80,80,g);
+                    }
                 }
                 catch(NumberFormatException ex){
                     error.setVisible(true);
