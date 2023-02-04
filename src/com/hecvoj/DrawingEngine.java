@@ -35,10 +35,10 @@ public class DrawingEngine {
         //This block is about calculating tropic and polar poles locations
         double locNorthPolarPoleX = centerLoc - (Latitude*intAngle) * Math.sin(angle); //this is just a center point
         double locNorthPolarPoleY = centerLoc - (Latitude*intAngle) * Math.cos(angle); //this is just a center point
-        double locNorthPolarPoleLeftX = locNorthPolarPoleX - (Latitude*intAngle)/2 * Math.sin(angle-90);
-        double locNorthPolarPoleLeftY = locNorthPolarPoleY - (Latitude*intAngle)/2 * Math.cos(angle-90);
-        double locNorthPolarPoleRightX = locNorthPolarPoleX - (Latitude*intAngle)/2 * Math.sin(angle+90);
-        double locNorthPolarPoleRightY = locNorthPolarPoleY + (Latitude*intAngle)/2 * Math.cos(angle+90);
+        double locNorthPolarPoleLeftX = locNorthPolarPoleX - (Latitude*intAngle)/2 * Math.sin(angle-Math.PI/2);
+        double locNorthPolarPoleLeftY = locNorthPolarPoleY - (Latitude*intAngle)/2 * Math.cos(angle-Math.PI/2);
+        double locNorthPolarPoleRightX = locNorthPolarPoleX - (Latitude*intAngle)/2 * Math.sin(angle+Math.PI/2);
+        double locNorthPolarPoleRightY = locNorthPolarPoleY + (Latitude*intAngle)/2 * Math.cos(angle+Math.PI/2);
         g.setColor(Color.blue);
         g.drawLine((int)locNorthPolarPoleLeftX,(int)locNorthPolarPoleLeftY,(int)locNorthPolarPoleRightX,(int)locNorthPolarPoleRightY);
 
